@@ -1,4 +1,4 @@
-import quilkCliargs from '../lib/index'
+import QuilkCliargs from '../lib/index'
 
 let dummyCliArray = [
   'devmode',
@@ -23,7 +23,7 @@ let unExpected = {
 
 describe('quilkCliargs Tests', () => {
   it('Expect the return to match the expected', (done) => {
-    if (JSON.stringify(quilkCliargs.getAll(dummyCliArray)) === JSON.stringify(expected)) {
+    if (JSON.stringify(QuilkCliargs.getAll(dummyCliArray)) === JSON.stringify(expected)) {
       done()
     }
     else {
@@ -32,7 +32,7 @@ describe('quilkCliargs Tests', () => {
   })
 
   it('Expect the return to not match the expected', (done) => {
-    if (JSON.stringify(quilkCliargs.getAll(dummyCliArray)) !== JSON.stringify(unExpected)) {
+    if (JSON.stringify(QuilkCliargs.getAll(dummyCliArray)) !== JSON.stringify(unExpected)) {
       done()
     }
     else {
