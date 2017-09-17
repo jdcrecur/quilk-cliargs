@@ -23,7 +23,7 @@ export default {
     {
       dest: pkg.main,
       format: 'umd',
-      moduleName: 'quilkCliargs',
+      moduleName: 'QuilkCliargs',
       sourceMap: true
     },
     {

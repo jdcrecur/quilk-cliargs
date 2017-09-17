@@ -1,10 +1,10 @@
 {
   "name": "quilk-cliargs",
-  "version": "1.0.0",
-  "description": "Node command line argument reader into js object",
-  "main": "dist/quilkCliargs.js",
-  "module": "dist/quilkCliargs.mjs",
-  "jsnext:main": "dist/quilkCliargs.mjs",
+  "version": "1.0.1",
+  "description": "Node command line argument reader into simple standardised js object (dashes, no dashes.. all normalised)",
+  "main": "dist/QuilkCliargs.js",
+  "module": "dist/QuilkCliargs.mjs",
+  "jsnext:main": "dist/QuilkCliargs.mjs",
   "scripts": {
     "prebuild": "eslint lib test",
     "build": "rollup -c --environment BUILD:production",
