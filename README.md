@@ -1,4 +1,4 @@
-# jdc-node-cliarg-reader
+# quilk-cliargs
 Node command line argument reader.
 
 Example call to a file named `server.js` might look like:
@@ -7,13 +7,32 @@ Example call to a file named `server.js` might look like:
 node server.js devmode arg2=one arg2=two arg2=potatoes -arg3=2742 --someOtherArg 
 ```
 
-In your application file you can now access these arguments very easily using the `readAll()` function:
+In your application file you can now access these arguments very easily using the `getAll()` function:
+
+es5
 ```
-var cliArgs = require('cliarg').readAll();
-console.log( cliArgs );
+var quilkCliargs = require('quilkCliargs').getAll();
+console.log( quilkCliargs );
 ```
 
-The console log output would be:
+es6
+```
+import quilkCliargs from 'quilkCliargs'
+
+class SomeClass{
+
+  constructor(){
+      this.cliArgs = quilkCliargs.getAll()
+  }
+
+  someMethod(){
+      console.log( this.cliArgs );
+  }
+}
+```
+
+
+The console log output of both would be:
 ```
 {
     devmode: true,
@@ -23,9 +42,10 @@ The console log output would be:
 }
 ```
 
-One additional thing to note is that this module normalises all the pre-dashes. In the example above notice how `-arg3` went in with a dash but the output was without. The same is true for a double dasg.
+An additional thing to note is that this module normalises all the pre-dashes. 
+In the example above notice how `-arg3` went in with a dash but the output was without. The same is true for a double dashes.
 
-the benefit to this is, in your program you can simply access the object returned from the readAll() function in a std object fashion eg:
+The benefit to this is, in your program you can simply access the object returned from the readAll() function in a std object fashion eg:
 ```
 if( cliArgs.someOtherArg ){
     //do something magical
